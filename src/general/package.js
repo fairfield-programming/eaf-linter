@@ -4,7 +4,8 @@ const path = require('path');
 function getPackageData() {
 
     var filePath = path.join(process.cwd(), './package.json');
-    var fileData = fs.readFileSync(filePath, 'ascii');
+    var fileData = "{}";
+    if (fs.existsSync(filePath)) fs.readFileSync(filePath, 'ascii');
     return JSON.parse(fileData);
 
 }
@@ -12,7 +13,8 @@ function getPackageData() {
 function getLockData() {
 
     var filePath = path.join(process.cwd(), './package-lock.json');
-    var fileData = fs.readFileSync(filePath, 'ascii');
+    var fileData = "{}";
+    if (fs.existsSync(filePath)) fs.readFileSync(filePath, 'ascii');
     return JSON.parse(fileData);
 
 }
