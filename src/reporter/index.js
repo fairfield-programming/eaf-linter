@@ -1,15 +1,14 @@
+const fs = require('fs');
+const path = require('path');
 const Folder = require('../general/folder');
 const packageLib = require('../general/package');
 
-function calculateScore() {
+function figureMetrics() {
 
     // Find Package Files
     var package = packageLib.getPackageData();
     var lock = packageLib.getLockData();
     var root = new Folder(process.cwd());
-
-    // Get Settings
-    var eafSettings = packageLib.getEafSettings(package);
 
     // Count Some Metrics
     var directDependenciesCount = packageLib.countDependencies(package);
@@ -17,21 +16,40 @@ function calculateScore() {
     var commentCount = root.countLineComments();
     var lineCount = root.countLines();
 
+    // Return as One Object
+    return {
+        directDependenciesCount,
+        indirectDependenciesCount,
+        commentCount,
+        lineCount
+    };
+
+}
+
+function calculateScore(metrics) {
+
+    // Check if Metrics Exists
+    if (metrics == undefined) return 0;
+
+    // Get Settings
+    var package = packageLib.getPackageData();
+    var eafSettings = packageLib.getEafSettings(package);
+
     // Setup Scoring
     var scoring = eafSettings.scoring;
 
     // Replace the Metrics 
-    scoring = scoring.replace(/indirectDependencies/g, indirectDependenciesCount);
-    scoring = scoring.replace(/directDependencies/g, directDependenciesCount);
-    scoring = scoring.replace(/commentCount/g, commentCount);
-    scoring = scoring.replace(/lineCount/g, lineCount);
+    scoring = scoring.replace(/indirectDependencies/g, metrics.indirectDependenciesCount);
+    scoring = scoring.replace(/directDependencies/g, metrics.directDependenciesCount);
+    scoring = scoring.replace(/commentCount/g, metrics.commentCount);
+    scoring = scoring.replace(/lineCount/g, metrics.lineCount);
 
     // Return the Score
     return eval(scoring);
 
 }
 
-function scoreToLetter(score) {
+function calculateGrade(score) {
 
     if (score >= 97) return "A+";
     if (score >= 93) return "A";
@@ -50,7 +68,40 @@ function scoreToLetter(score) {
 
 }
 
+function fixPathToMetrics() {
+
+    var githubPath = path.join(process.cwd(), '.github');
+    var metricsPath = path.join(process.cwd(), '.github', 'metrics.json');
+
+    if (!fs.existsSync(githubPath)) 
+        fs.mkdirSync(githubPath);
+
+    return metricsPath;
+
+}
+
+function storeMetricsFile() {
+
+    // Store the Metrics
+    var metrics = figureMetrics();
+    var metricsPath = fixPathToMetrics();
+
+    // Find the Score
+    metrics.score = calculateScore(metrics);
+    metrics.grade = calculateGrade(metrics.score);
+
+    // JSON to File Data
+    var fileData = JSON.stringify(metrics, null, 4);
+
+    // Write the Metrics File
+    fs.writeFileSync(metricsPath, fileData);
+
+}
+
 module.exports = {
     calculateScore,
-    scoreToLetter
+    calculateGrade,
+    storeMetricsFile,
+    figureMetrics,
+    fixPathToMetrics,
 };
