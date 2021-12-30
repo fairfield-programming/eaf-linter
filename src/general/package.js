@@ -45,6 +45,8 @@ function getEafSettings(package) {
     // Return a Mix of Both
     return {
         tests: package.eaf.tests || eafDefaults.tests,
+        scoring: package.eaf.scoring || eafDefaults.scoring,
+        ignore: package.eaf.ignore || eafDefaults.ignore,
     };
 
 }

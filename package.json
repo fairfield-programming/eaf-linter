@@ -17,8 +17,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "eaf": {
+    "scoring": "((1 / (directDependencies + indirectDependencies + 1)) * 10) + 90"
+  },
   "bugs": {
     "url": "https://github.com/fairfield-programming/eaf-linter/issues"
   },
-  "homepage": "https://github.com/fairfield-programming/eaf-linter#readme"
+  "homepage": "https://github.com/fairfield-programming/eaf-linter#readme",
+  "dependencies": {
+    "abstract-syntax-tree": "^2.20.5"
+  }
 }
