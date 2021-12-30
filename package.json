@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/fairfield-programming/eaf-linter.git"
   },
+  "bin": {
+    "eaf-linter": "src/index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
