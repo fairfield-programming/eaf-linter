@@ -21,6 +21,7 @@ function getEafDefaults() {
 
     // Get the Defaults
     return {
+        scoring: "(1 / (directDependencies + indirectDependencies + 1)) * 100",
         tests: false
     };
 
