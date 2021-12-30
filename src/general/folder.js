@@ -7,12 +7,21 @@ class Folder {
     folderPath = "";
 
     constructor(dirPath) {
-        
+
         this.folderPath = dirPath;
         
     }
 
+    isIgnored() {
+
+        return new RegExp(global.eafSettings.ignore).test(this.folderPath);
+
+    }
+
     countLines() {
+
+        // Check if Folder Should be Ignored
+        if (this.isIgnored()) return 0;
 
         var count = 0;
         var subfolders = this.getFolders();
@@ -35,6 +44,9 @@ class Folder {
     }
 
     countLineComments() {
+
+        // Check if Folder Should be Ignored
+        if (this.isIgnored()) return 0;
 
         var count = 0;
         var subfolders = this.getFolders();

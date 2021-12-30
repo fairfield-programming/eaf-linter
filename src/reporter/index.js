@@ -7,6 +7,7 @@ function figureMetrics() {
 
     // Find Package Files
     var package = packageLib.getPackageData();
+    global.eafSettings = packageLib.getEafSettings(package);
     var lock = packageLib.getLockData();
     var root = new Folder(process.cwd());
 
@@ -30,10 +31,6 @@ function calculateScore(metrics) {
 
     // Check if Metrics Exists
     if (metrics == undefined) return 0;
-
-    // Get Settings
-    var package = packageLib.getPackageData();
-    var eafSettings = packageLib.getEafSettings(package);
 
     // Setup Scoring
     var scoring = eafSettings.scoring;
