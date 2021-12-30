@@ -1,0 +1,15 @@
+name: Lint, Prettify, Test, and Score Code
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run the EAF Linter
+        run: npx eaf-linter
