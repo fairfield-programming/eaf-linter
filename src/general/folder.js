@@ -18,6 +18,30 @@ class Folder {
 
     }
 
+    countFiles() {
+
+        // Check if Folder Should be Ignored
+        if (this.isIgnored()) return 0;
+
+        // Initialize Count and Folders
+        var count = 0;
+        var subfolders = this.getFolders();
+
+        // Add File Count
+        count += this.getFiles().length;
+
+        // Loop Through Sub-Folders
+        subfolders.forEach((folder) => {
+
+            count += folder.countFiles();
+
+        });
+
+        // Return the Count
+        return count;
+
+    }
+
     countLines() {
 
         // Check if Folder Should be Ignored

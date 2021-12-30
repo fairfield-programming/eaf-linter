@@ -21,7 +21,7 @@ function getEafDefaults() {
 
     // Get the Defaults
     return {
-        ignore: "node_modules",
+        ignore: "(node_modules)|(.git)",
         scoring: "(1 / (directDependencies + indirectDependencies + 1)) * 100",
         tests: false
     };

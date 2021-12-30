@@ -16,13 +16,15 @@ function figureMetrics() {
     var indirectDependenciesCount = packageLib.countDependencies(lock);
     var commentCount = root.countLineComments();
     var lineCount = root.countLines();
+    var fileCount = root.countFiles();
 
     // Return as One Object
     return {
         directDependenciesCount,
         indirectDependenciesCount,
         commentCount,
-        lineCount
+        lineCount,
+        fileCount
     };
 
 }
@@ -40,6 +42,7 @@ function calculateScore(metrics) {
     scoring = scoring.replace(/directDependencies/g, metrics.directDependenciesCount);
     scoring = scoring.replace(/commentCount/g, metrics.commentCount);
     scoring = scoring.replace(/lineCount/g, metrics.lineCount);
+    scoring = scoring.replace(/fileCount/g, metrics.fileCount);
 
     // Return the Score
     return eval(scoring);
