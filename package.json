@@ -4,6 +4,7 @@
   "description": "A javascript linter, tester, and prettier.",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "patch-release": "npm version patch && npm publish && git push --follow-tags"
   },
   "repository": {
@@ -13,6 +14,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "express": "1.0.0"
+  },
   "bugs": {
     "url": "https://github.com/fairfield-programming/eaf-linter/issues"
   },
