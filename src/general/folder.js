@@ -14,6 +14,7 @@ class Folder {
 
     isIgnored() {
 
+        // Check if the Folder Should be Ignored
         return new RegExp(global.eafSettings.ignore).test(this.folderPath);
 
     }
