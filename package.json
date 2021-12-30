@@ -1,0 +1,20 @@
+{
+  "name": "eaf-linter",
+  "version": "1.0.0",
+  "description": "A javascript linter, tester, and prettier.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fairfield-programming/eaf-linter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fairfield-programming/eaf-linter/issues"
+  },
+  "homepage": "https://github.com/fairfield-programming/eaf-linter#readme"
+}
