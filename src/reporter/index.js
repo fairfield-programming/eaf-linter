@@ -13,7 +13,7 @@ function figureMetrics() {
 
     // Count Some Metrics
     var directDependenciesCount = packageLib.countDependencies(package);
-    var indirectDependenciesCount = packageLib.countDependencies(lock);
+    var indirectDependenciesCount = packageLib.countDependencies(lock || {});
     var commentCount = root.countLineComments();
     var lineCount = root.countLines();
     var fileCount = root.countFiles();
