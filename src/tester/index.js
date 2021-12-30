@@ -53,13 +53,25 @@ function trimFilePath(filePath) {
 function testFolder(folderPath) {
 
     var folder = new Folder(folderPath);
+    var allTestsPassed = true;
 
     folder.forEachFile(function fileMethod(file, state) {
 
-        if (file.filePath.includes("tests"))
-            printTestResult(file.filePath, runTestFile(file.filePath));
+        if (file.filePath.includes("tests")) {
+        
+            var testResult = runTestFile(file.filePath);
+            printTestResult(file.filePath, testResult);
+            allTestsPassed = allTestsPassed && testResult;
+        
+        }
 
     }, { });
+
+    if (!allTestsPassed) {
+
+        process.exit(-1);
+
+    }
 
 }
 
