@@ -1,5 +1,6 @@
 const vm = require('vm');
 const fs = require('fs');
+const path = require('path');
 const Folder = require("../general/folder")
 
 function runTestFile(testFilePath) {
@@ -35,11 +36,19 @@ function printTestResult(fileName, result) {
     resultTitle += "\033[22m";
     resultTitle += "\033[0m";
 
+    // Make File Name Relative
+    var relativeFileName = trimFilePath(fileName);
+
     // Log to Console
-    console.log(`${resultTitle} ${fileName}`);
+    console.log(`${resultTitle} ${relativeFileName}`);
 
 }
 
+function trimFilePath(filePath) {
+
+    return path.relative(process.cwd(), filePath);
+
+}
 
 function testFolder(folderPath) {
 
