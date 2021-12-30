@@ -13,6 +13,32 @@
 
 ### Customizable Beautifier
 
+## For Github Actions
+
+When we were building EaF, we realized that most of its users will want to use it for continous integration and development. That is why we are one of the first NPM packages that is designed not to be downloaded, you can just run EaF with the `npx` command- its that easy. You don't need any special command parameters or files that stink up your root directory- our impact is as minimal as possible. If you really want to customize EaF, just add what you want to the `package.json` file.
+
+```yml
+name: Lint, Prettify, Test, and Score Code
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run the EAF Linter
+        run: npx eaf-linter
+
+      - name: Commit Changes
+        uses: EndBug/add-and-commit@v7
+        messages: 🦆 Code Fixed with EaF-Lint!
+```
+
 ## License
 
 Copyright 2021 Fairfield Programming Association
