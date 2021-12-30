@@ -17,6 +17,30 @@ function getLockData() {
 
 }
 
+function getEafDefaults() {
+
+    // Get the Defaults
+    return {
+        tests: false
+    };
+
+}
+
+function getEafSettings(package) {
+
+    // Get the Defaults
+    var eafDefaults = getEafDefaults();
+
+    // If Package.eaf Doesn't Exist, Just Return the Defaults
+    if (package.eaf == undefined) return eafDefaults;
+
+    // Return a Mix of Both
+    return {
+        tests: package.eaf.tests || eafDefaults.tests,
+    };
+
+}
+
 function countDependencies(package) {
 
     // Create an Array of Dependencies
@@ -42,4 +66,5 @@ module.exports = {
     getPackageData,
     getLockData,
     countDependencies,
+    getEafSettings
 };
