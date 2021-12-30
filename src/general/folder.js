@@ -23,22 +23,26 @@ class Folder {
         // Check if Folder Should be Ignored
         if (this.isIgnored()) return 0;
 
+        // Initialize Count and Folders
         var count = 0;
         var subfolders = this.getFolders();
         var files = this.getFiles();
         
+        // Loop Through Sub-Folders
         subfolders.forEach((folder) => {
 
             count += folder.countLines();
 
         });
 
+        // Loop Through Files
         files.forEach((file) => {
 
             count += file.countLines();
 
         });
 
+        // Return the Count
         return count;
 
     }
@@ -48,22 +52,26 @@ class Folder {
         // Check if Folder Should be Ignored
         if (this.isIgnored()) return 0;
 
+        // Initialize Count and Folders
         var count = 0;
         var subfolders = this.getFolders();
         var files = this.getFiles();
         
+        // Loop Through Sub-Folders
         subfolders.forEach((folder) => {
 
             count += folder.countLineComments();
 
         });
 
+        // Loop Through Files
         files.forEach((file) => {
 
             count += file.countLineComments();
 
         });
 
+        // Return the Count
         return count;
         
     }
