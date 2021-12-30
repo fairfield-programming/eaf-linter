@@ -1,5 +1,6 @@
 const vm = require('vm');
 const fs = require('fs');
+const Folder = require("../general/folder")
 
 function runTestFile(testFilePath) {
 
@@ -39,8 +40,22 @@ function printTestResult(fileName, result) {
 
 }
 
-printTestResult('./tests/tests.js', true);
-printTestResult('./tests/tests.js', false);
-printTestResult('./tests/tests.js', false);
-printTestResult('./tests/tests.js', true);
-printTestResult('./tests/tests.js', false);
+
+function testFolder(folderPath) {
+
+    var folder = new Folder(folderPath);
+
+    folder.forEachFile(function fileMethod(file, state) {
+
+        if (file.filePath.includes("tests"))
+            printTestResult(file.filePath, runTestFile(file.filePath));
+
+    }, { });
+
+}
+
+module.exports = {
+    testFolder,
+    printTestResult,
+    runTestFile,
+};

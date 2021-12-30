@@ -72,6 +72,56 @@ class Folder {
 
     }
 
+    forEachFileAndFolder(fileMethod, folderMethod, state) {
+
+        // Check if Folder Should be Ignored
+        if (this.isIgnored()) return;
+
+        // Initialize Count and Folders
+        var subfolders = this.getFolders();
+        var files = this.getFiles();
+        
+        // Loop Through Sub-Folders
+        subfolders.forEach((folder) => {
+
+            folder.forEachFile(fileMethod, folderMethod, folderMethod(this.folderPath, state));
+
+        });
+
+        // Loop Through Files
+        files.forEach((file) => {
+
+            fileMethod(file, folderMethod(this.folderPath, state));
+
+        });
+
+    }
+
+    forEachFile(method, state) {
+
+        // Check if Folder Should be Ignored
+        if (this.isIgnored()) return;
+
+        // Initialize Count and Folders
+        var subfolders = this.getFolders();
+        var files = this.getFiles();
+        
+        // Loop Through Sub-Folders
+        subfolders.forEach((folder) => {
+
+            folder.forEachFile(method, state);
+
+        });
+
+        // Loop Through Files
+        files.forEach((file) => {
+
+            method(file, state);
+
+        });
+
+    }
+
     countLineComments() {
 
         // Check if Folder Should be Ignored

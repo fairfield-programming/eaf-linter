@@ -3,10 +3,12 @@ const fs = require('fs');
 class File {
 
     fileData = "";
+    filePath = "";
 
     constructor(filePath) {
 
         this.fileData = fs.readFileSync(filePath, 'ascii');
+        this.filePath = filePath;
 
     }
 
