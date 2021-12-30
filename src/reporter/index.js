@@ -6,6 +6,7 @@ function calculateScore() {
     // Find Package Files
     var package = packageLib.getPackageData();
     var lock = packageLib.getLockData();
+    var root = new Folder(process.cwd());
 
     // Get Settings
     var eafSettings = packageLib.getEafSettings(package);
@@ -13,16 +14,17 @@ function calculateScore() {
     // Count Some Metrics
     var directDependenciesCount = packageLib.countDependencies(package);
     var indirectDependenciesCount = packageLib.countDependencies(lock);
+    var commentCount = root.countLineComments();
+    var lineCount = root.countLines();
 
     // Setup Scoring
     var scoring = eafSettings.scoring;
 
-    var folder = new Folder(process.cwd());
-    console.log(folder.countLineComments() / folder.countLines());
-
     // Replace the Metrics 
     scoring = scoring.replace(/indirectDependencies/g, indirectDependenciesCount);
     scoring = scoring.replace(/directDependencies/g, directDependenciesCount);
+    scoring = scoring.replace(/commentCount/g, commentCount);
+    scoring = scoring.replace(/lineCount/g, lineCount);
 
     // Return the Score
     return eval(scoring);
