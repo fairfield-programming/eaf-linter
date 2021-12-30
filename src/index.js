@@ -1,3 +1,3 @@
-const scorer = require('./scorer');
+const reporter = require('./reporter');
 
-console.log(scorer.calculateScore());
+console.log(reporter.calculateScore());
