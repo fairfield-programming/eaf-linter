@@ -15,7 +15,7 @@
     "eaf-linter": "src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fairfield Programming Association",
   "license": "ISC",
   "eaf": {
     "scoring": "((1 / (directDependencies + indirectDependencies + 1)) * 10) + 90"
