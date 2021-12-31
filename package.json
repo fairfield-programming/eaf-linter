@@ -1,6 +1,6 @@
 {
   "name": "eaf-linter",
-  "version": "1.1.27",
+  "version": "1.1.28",
   "description": "A javascript linter, tester, and prettier.",
   "main": "src/index.js",
   "scripts": {
