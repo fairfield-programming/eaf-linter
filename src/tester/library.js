@@ -43,6 +43,15 @@ class Expectation {
 
     }
 
+    toExist() {
+
+        global.EAF_CURRENT_TEST_PASSING = global.EAF_CURRENT_TEST_PASSING && (this.data != undefined) && (this.data != null);
+
+        return this;
+
+    }
+
+
 }
 
 function describe(name, method) {
