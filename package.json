@@ -2,7 +2,7 @@
   "name": "eaf-linter",
   "version": "1.1.22",
   "description": "A javascript linter, tester, and prettier.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "patch-release": "npm version patch && npm publish && git push --follow-tags"
