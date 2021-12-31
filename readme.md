@@ -27,6 +27,8 @@ describe(`A simple test!`, () => {
 
 ### [Performance Analysis Tool](https://github.com/fairfield-programming/eaf-linter/tree/master/src/performer)
 
+Performance anaylsis is very important, especially if you are managing a ton of data that has rapid changes to it. That is why EaF offers some of the most robust and detailed tools for measuring your codes execution time. We will run it in thousands of test cases, and you can setup different scenarios to make sure that the code you put out, stays on top.
+
 ## For Github Actions
 
 When we were building EaF, we realized that most of its users will want to use it for continous integration and development. That is why we are one of the first NPM packages that is designed not to be downloaded, you can just run EaF with the `npx` command- its that easy. You don't need any special command parameters or files that stink up your root directory- our impact is as minimal as possible. If you really want to customize EaF, just add what you want to the `package.json` file.
