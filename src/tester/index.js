@@ -71,7 +71,10 @@ function testFolder(folderPath) {
         if (file.filePath.includes("tests")) {
         
             var testResult = runTestFile(file.filePath);
-            printer.printTestResult(file.filePath, testResult);
+            var trimmedPath = trimFilePath(file.filePath);
+
+            console.log(printer.printTestResult(trimmedPath, testResult));
+            
             allTestsPassed = allTestsPassed && testResult;
         
         }
@@ -89,4 +92,5 @@ function testFolder(folderPath) {
 module.exports = {
     testFolder,
     runTestFile,
+    trimFilePath
 };

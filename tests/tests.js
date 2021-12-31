@@ -7,3 +7,9 @@ describe(`A simple test!`, () => {
     expect("New String").toExist().and().length().toBe(10); // passing
 
 });
+
+describe(`another test over here!`, () => {
+
+    expect((22 + 8) + "").length().toBe(2);
+
+});
