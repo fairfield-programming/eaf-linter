@@ -2,8 +2,13 @@
     "directDependenciesCount": 0,
     "indirectDependenciesCount": 0,
     "commentCount": 91,
+<<<<<<< HEAD
     "lineCount": 885,
     "fileCount": 15,
+=======
+    "lineCount": 858,
+    "fileCount": 14,
+>>>>>>> 92bab7d4667364c714d6d4d490ef232be0d88360
     "score": 100,
     "grade": "A+"
 }
