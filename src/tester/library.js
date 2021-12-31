@@ -62,11 +62,11 @@ class Expectation {
         if (typeof (this.data) != 'string') {
 
             global.EAF_CURRENT_TEST_PASSING = false;
-            return 0;
+            return new Expectation(0);
 
         }
 
-        return this.data.length;
+        return new Expectation(this.data.length);
 
     }
 
