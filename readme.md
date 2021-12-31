@@ -7,6 +7,8 @@
 
 ### Fully Featured Code Grading
 
+_Knowing if you need to work on your code is important-_ that's why we grade your code automatically. But, unlike other code-grading solutions, we let _you_ choose how you want to be graded. If you project isn't supposed to have a bunch of comments, why should your grade drop because you don't have enough comments? We beat our competitors because _you get to choose_ what you want to work on.
+
 ### Lightweight, Feature-Rich Testing Suite
 
 ### Code Linter and Smell Detector
