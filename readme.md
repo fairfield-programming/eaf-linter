@@ -5,11 +5,11 @@
 
 ## Features
 
-### Fully Featured Code Grading
+### [Fully Featured Code Grading](https://github.com/fairfield-programming/eaf-linter/tree/master/src/reporter)
 
 _Knowing if you need to work on your code is important-_ that's why we grade your code automatically. But, unlike other code-grading solutions, we let _you_ choose how you want to be graded. If you project isn't supposed to have a bunch of comments, why should your grade drop because you don't have enough comments? We beat our competitors because _you get to choose_ what you want to work on.
 
-### Lightweight, Feature-Rich Testing Suite
+### [Lightweight, Feature-Rich Testing Suite](https://github.com/fairfield-programming/eaf-linter/tree/master/src/tester)
 
 Our testing system gets as close-to-the-metal as possible. What this means for you is that the tests run fast, and since they run on Javascript's V8 engine, everything you expect to happen, will happen. Nothing can be simplier than writing tests for the EaF linter, its as easy as writing things in plain English. Don't believe me, look at the code below!
 
@@ -21,9 +21,11 @@ describe(`A simple test!`, () => {
 });
 ```
 
-### Code Linter and Smell Detector
+### [Code Linter and Smell Detector](https://github.com/fairfield-programming/eaf-linter/tree/master/src/linter)
 
-### Customizable Beautifier
+### [Customizable Beautifier](https://github.com/fairfield-programming/eaf-linter/tree/master/src/prettier)
+
+### [Performance Analysis Tool](https://github.com/fairfield-programming/eaf-linter/tree/master/src/performer)
 
 ## For Github Actions
 
