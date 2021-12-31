@@ -58,10 +58,6 @@ jobs:
           messages: 🦆 Code Fixed with EaF-Lint!
 ```
 
-## Testing Suite
-
-<!--- TEST RESULTS -->
-
 ## License
 
 Copyright 2021 Fairfield Programming Association
