@@ -45,6 +45,12 @@ class Expectation {
 
 }
 
+function describe(name, method) {
+
+    method();
+
+}
+
 function expect(input) {
 
     return new Expectation(input);
@@ -52,5 +58,6 @@ function expect(input) {
 }
 
 module.exports = {
-    expect
+    expect,
+    describe,
 };
