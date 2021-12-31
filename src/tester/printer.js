@@ -126,5 +126,10 @@ function indentLines(text) {
 // }));
 
 module.exports = {
-    
+    indentLines,
+    printTestResult,
+    printDotTestResult,
+    printConsoleData,
+    printMarkdownData,
+    allChildrenTrue,
 };

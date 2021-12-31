@@ -2,6 +2,7 @@ const vm = require('vm');
 const fs = require('fs');
 const path = require('path');
 const Folder = require("../general/folder")
+const printer = require("./printer");
 
 function runTestFile(testFilePath) {
 
@@ -70,7 +71,7 @@ function testFolder(folderPath) {
         if (file.filePath.includes("tests")) {
         
             var testResult = runTestFile(file.filePath);
-            printTestResult(file.filePath, testResult);
+            printer.printTestResult(file.filePath, testResult);
             allTestsPassed = allTestsPassed && testResult;
         
         }
@@ -87,6 +88,5 @@ function testFolder(folderPath) {
 
 module.exports = {
     testFolder,
-    printTestResult,
     runTestFile,
 };
