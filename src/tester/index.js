@@ -54,26 +54,6 @@ function runTestFile(testFilePath) {
 
 }
 
-function printTestResult(fileName, result) {
-
-    // Set Title to Be Bold
-    var resultTitle = "\033[1m";
-
-    if (result == true) resultTitle += "\033[1;37;42m PASSED ";
-    if (result == false) resultTitle += "\033[1;37;41m FAILED ";
-
-    // Unbold Title
-    resultTitle += "\033[22m";
-    resultTitle += "\033[0m";
-
-    // Make File Name Relative
-    var relativeFileName = trimFilePath(fileName);
-
-    // Log to Console
-    console.log(`${resultTitle} ${relativeFileName}`);
-
-}
-
 function trimFilePath(filePath) {
 
     return path.relative(process.cwd(), filePath);
