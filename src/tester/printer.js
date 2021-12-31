@@ -111,20 +111,6 @@ function indentLines(text) {
 
 }
 
-// console.log(printConsoleData({
-//     "Ran Tests": {
-//         "Cleared Something": true,
-//         "Worked Well": true
-//     },
-//     "Something Else Here": {
-//         "Sub-Item Worked": true,
-//         "Sub-Item": {
-//             "Length Set Correctly": false,
-//             "Stuff Here": true
-//         }
-//     }
-// }));
-
 module.exports = {
     indentLines,
     printTestResult,
