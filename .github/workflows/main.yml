@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run the EAF Linter
+      - name: Run the EaF Linter
         run: npx eaf-linter
 
       - name: Commit Changes
