@@ -12,7 +12,6 @@ function runTestFile(testFilePath) {
         URL,
         TextEncoder,
         TextDecoder,
-        structuredClone,
         setTimeout,
         setInterval,
         setImmediate,
