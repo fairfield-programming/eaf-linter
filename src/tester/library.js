@@ -51,6 +51,11 @@ class Expectation {
 
     }
 
+    and() {
+
+        return this;
+
+    }
 
 }
 
