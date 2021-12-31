@@ -2,6 +2,8 @@
 
 ![Code Grade](https://img.shields.io/badge/dynamic/json?color=green&label=Grade&query=grade&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffairfield-programming%2Feaf-linter%2Fmaster%2F.github%2Fmetrics.json)
 ![Dependencies](https://img.shields.io/badge/dynamic/json?color=blue&label=Dependencies&query=indirectDependenciesCount&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffairfield-programming%2Feaf-linter%2Fmaster%2F.github%2Fmetrics.json)
+![GitHub repo size](https://img.shields.io/github/repo-size/fairfield-programming/eaf-linter)
+![GitHub](https://img.shields.io/github/license/fairfield-programming/eaf-linter)
 
 ## Features
 
