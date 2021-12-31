@@ -57,6 +57,19 @@ class Expectation {
 
     }
 
+    length() {
+
+        if (typeof (this.data) != 'string') {
+
+            global.EAF_CURRENT_TEST_PASSING = false;
+            return 0;
+
+        }
+
+        return this.data.length;
+
+    }
+
 }
 
 function describe(name, method) {
