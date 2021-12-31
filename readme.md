@@ -48,7 +48,7 @@ jobs:
 
       - name: Commit Changes
         uses: EndBug/add-and-commit@v7
-        messages: 🦆 Code Fixed with EaF-Lint!
+          messages: 🦆 Code Fixed with EaF-Lint!
 ```
 
 ## License
