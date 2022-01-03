@@ -1,9 +1,9 @@
 {
-    "directDependenciesCount": 0,
+    "directDependenciesCount": 1,
     "indirectDependenciesCount": 0,
-    "commentCount": 87,
-    "lineCount": 1006,
-    "fileCount": 20,
-    "score": 100,
-    "grade": "A+"
+    "commentCount": 88,
+    "lineCount": 1037,
+    "fileCount": 22,
+    "score": 95,
+    "grade": "A"
 }
