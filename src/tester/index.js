@@ -83,7 +83,16 @@ function testFolder(folderPath) {
 
     if (!allTestsPassed) {
 
-        process.exit(-1);
+        if (global.eafSettings["force-fail"] != undefined) {
+            
+            if (global.eafSettings["force-fail"] != false)
+                process.exit(-1);
+        
+        } else {
+            
+            process.exit(-1);
+
+        }
 
     }
 

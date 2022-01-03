@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/fairfield-programming/eaf-linter/issues"
   },
-  "homepage": "https://github.com/fairfield-programming/eaf-linter#readme"
+  "homepage": "https://github.com/fairfield-programming/eaf-linter#readme",
+  "dependencies": {
+    "@babel/parser": "^7.16.7"
+  }
 }
