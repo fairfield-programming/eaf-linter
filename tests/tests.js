@@ -1,4 +1,4 @@
-describe(`A simple test!`, () => {
+describe(`a simple test!`, () => {
     
     expect(32 + 8).toBe(40);
     expect(20 * 40).toBeGreaterThan(10 * 40);
