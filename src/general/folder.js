@@ -4,6 +4,8 @@ const File = require('./file');
 
 class Folder {
 
+    folderPath = "";
+
     constructor(dirPath) {
 
         this.folderPath = dirPath;

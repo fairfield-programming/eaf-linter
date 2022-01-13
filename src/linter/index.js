@@ -4,23 +4,14 @@ const commentSeparator = require('./pipe/commentSeparator');
 
 var syntaxTree = parser.parse(
 `
+// good
+const atom = {
+  value: 1,
 
-// good, use the let.
-let count = 1;
-if (true) {
-  
-  count += 1;
-  
-} else if (false) {
-
-  count += 2;
-  
-} else {
-
-  count += 3;
-
-}
-
+  addValue(value) {
+    return atom.value + value;
+  },
+};
 `).program.body;
 
 var components = {
@@ -41,7 +32,12 @@ var components = {
     AssignmentExpression: require("./components/AssignmentExpression"),
     ArrayExpression: require("./components/ArrayExpression"),
     IfStatement: require("./components/IfStatement"),
-    BooleanLiteral: require("./components/BooleanLiteral")
+    BooleanLiteral: require("./components/BooleanLiteral"),
+    NewExpression: require("./components/NewExpression"),
+    ObjectExpression: require("./components/ObjectExpression"),
+    ObjectProperty: require("./components/ObjectProperty"),
+    ReturnStatement: require("./components/ReturnStatement"),
+    ObjectMethod: require("./components/ObjectMethod")
 }; 
 
 // Use a Piping System
