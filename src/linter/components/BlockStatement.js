@@ -12,8 +12,9 @@ function write(item, main) {
 
     var unpaddedText = output.join("\n");
     var paddedText = padder.verticalPadding(unpaddedText, 2);
+    var indentedText = padder.indent(paddedText, 1);
 
-    return `{${paddedText}}`;
+    return `{${indentedText}}`;
 
 }
 

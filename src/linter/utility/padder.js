@@ -19,9 +19,9 @@ function verticalPadding(text, amount) {
 
 function indent(text, amount) {
 
-    var newline = new Array(amount + 1).join("\t") + "\n";
+    var newline = "\n" + new Array(amount + 1).join("\t");
 
-    return new Array(amount + 1).join("\t") + text.replace(/\n/g, newline);
+    return text.replace(/\n/g, newline);
 
 }
 

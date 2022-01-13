@@ -30,7 +30,9 @@ var components = {
     ObjectMethod: require("./components/ObjectMethod"),
     TemplateLiteral: require("./components/TemplateLiteral"),
     TemplateElement: require("./components/TemplateElement"),
-    SpreadElement: require("./components/SpreadElement")
+    SpreadElement: require("./components/SpreadElement"),
+    ObjectPattern: require("./components/ObjectPattern"),
+    ConditionalExpression: require("./components/ConditionalExpression")
 }; 
 
 // Standard Piping Function
