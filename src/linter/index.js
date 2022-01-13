@@ -7,7 +7,7 @@ var syntaxTree = parser.parse(
 // this is a test
 function testing() {
 
-    var a = 4;
+    var username = "William McGonagle"
 
 }
 
@@ -21,7 +21,8 @@ var components = {
     NumericLiteral: require("./components/NumericLiteral"),
     CommentLine: require("./components/CommentLine"),
     FunctionDeclaration: require("./components/FunctionDeclaration"),
-    BlockStatement: require("./components/BlockStatement")
+    BlockStatement: require("./components/BlockStatement"),
+    StringLiteral: require("./components/StringLiteral")
 };
 
 // Use a Piping System
