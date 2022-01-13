@@ -10,6 +10,9 @@ function testing_function (a, b) {
 
         var username = a + " " + b
 
+        console.log(HTTP_Username);
+        console.log(username);
+
 }
 
 `).program.body;
@@ -23,7 +26,10 @@ var components = {
     CommentLine: require("./components/CommentLine"),
     FunctionDeclaration: require("./components/FunctionDeclaration"),
     BlockStatement: require("./components/BlockStatement"),
-    StringLiteral: require("./components/StringLiteral")
+    StringLiteral: require("./components/StringLiteral"),
+    ExpressionStatement: require("./components/ExpressionStatement"),
+    CallExpression: require("./components/CallExpression"),
+    MemberExpression: require("./components/MemberExpression")
 };
 
 // Use a Piping System
