@@ -1,19 +1,24 @@
 #! /usr/bin/env node
 
-const reporter = require('./reporter');
-const tester = require('./tester');
-const performer = require('./performer');
+// const reporter = require('./reporter');
+// const tester = require('./tester');
+// const performer = require('./performer');
+const linter = require('./linter');
 
-reporter.storeMetricsFile();
+var userSettings = {};
 
-if (global.eafSettings["run-tests"] != undefined) {
+linter.run(userSettings);
 
-    if (global.eafSettings["run-tests"] != false)
-        tester.testFolder(process.cwd());
+// reporter.storeMetricsFile();
 
-} else {
+// if (global.eafSettings["run-tests"] != undefined) {
 
-    tester.testFolder(process.cwd());
+//     if (global.eafSettings["run-tests"] != false)
+//         tester.testFolder(process.cwd());
 
-}
+// } else {
+
+//     tester.testFolder(process.cwd());
+
+// }
 // performer.testFolder(process.cwd());

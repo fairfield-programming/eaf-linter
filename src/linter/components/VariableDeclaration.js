@@ -1,6 +1,6 @@
-function write() {
+function write(item, main) {
 
-    return "Hi";
+    return `${item.kind} ${main.parse(item.declarations[0])}`;
 
 }
 
