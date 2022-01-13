@@ -1,18 +1,8 @@
 const parser = require("@babel/parser");
+const fs = require('fs');
 
 const commentSeparator = require('./pipe/commentSeparator');
-
-var syntaxTree = parser.parse(
-`
-// good
-const atom = {
-  value: 1,
-
-  addValue(value) {
-    return atom.value + value;
-  },
-};
-`).program.body;
+const staleDetector = require('./pipe/staleDetector');
 
 var components = {
     VariableDeclarator: require("./components/VariableDeclarator"),
@@ -37,20 +27,11 @@ var components = {
     ObjectExpression: require("./components/ObjectExpression"),
     ObjectProperty: require("./components/ObjectProperty"),
     ReturnStatement: require("./components/ReturnStatement"),
-    ObjectMethod: require("./components/ObjectMethod")
+    ObjectMethod: require("./components/ObjectMethod"),
+    TemplateLiteral: require("./components/TemplateLiteral"),
+    TemplateElement: require("./components/TemplateElement"),
+    SpreadElement: require("./components/SpreadElement")
 }; 
-
-// Use a Piping System
-var currentState = syntaxTree;
-
-[
-    commentSeparator,
-]
-.forEach(function (pipe) {
-
-    currentState = pipe(currentState);
-
-});
 
 // Standard Piping Function
 function parse(item) {
@@ -69,15 +50,55 @@ function parse(item) {
 
 }
 
-currentState.forEach(function (element) {
+function pipe(input) {
 
-    console.log(parse(element));
+    // Setup Input and Output
+    var output = input;
 
-});
+    // Use a Piping System
+    [
+        commentSeparator,
+        staleDetector
+    ]
+    .forEach(function (pipe) {
+
+        output = pipe(output);
+
+    });
+
+    // Return the Output
+    return output;
+
+}
+
+function lintString(input) {
+
+    // Check that Input is Defined
+    if (input == undefined) return "";
+
+    // Babel Parse It
+    var syntaxTree = parser.parse(input).program.body;
+    var finalSyntaxTree = pipe(syntaxTree);
+
+    // Create Output Data
+    var output = [];
+
+    // Go Through Syntax Tree
+    finalSyntaxTree.forEach(function (element) {
+
+        output.push(parse(element));
+
+    });
+
+    // Return Output
+    return output.join("\n");
+
+}
 
 function run() {
 
-
+    var fileData = lintString(fs.readFileSync(__dirname + '/test.js', 'ascii'));
+    fs.writeFileSync(__dirname + '/test.js', fileData);
 
 }
 
