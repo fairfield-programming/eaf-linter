@@ -4,7 +4,9 @@ function separateComments(input) {
 
     input.forEach(function (item) {
 
-        output.push(...item.leadingComments);
+        if (item.leadingComments !== undefined)
+            output.push(...item.leadingComments);
+        
         output.push(item);
 
     });

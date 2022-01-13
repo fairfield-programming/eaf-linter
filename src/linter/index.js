@@ -5,15 +5,12 @@ const commentSeparator = require('./pipe/commentSeparator');
 var syntaxTree = parser.parse(
 `
 
-//   feature request: add more functions in
-function testing_function (a, b) {
+const foo = [1, 2];
+const bar = foo;
 
-        var username = a + " " + b
+bar[0] = 9;
 
-        console.log(HTTP_Username);
-        console.log(username);
-
-}
+console.log(foo[0], bar[0]); // => 9, 9
 
 `).program.body;
 
@@ -29,8 +26,12 @@ var components = {
     StringLiteral: require("./components/StringLiteral"),
     ExpressionStatement: require("./components/ExpressionStatement"),
     CallExpression: require("./components/CallExpression"),
-    MemberExpression: require("./components/MemberExpression")
-};
+    MemberExpression: require("./components/MemberExpression"),
+    ArrowFunctionExpression: require("./components/ArrowFunctionExpression"),
+    FunctionExpression: require("./components/FunctionExpression"),
+    AssignmentExpression: require("./components/AssignmentExpression"),
+    ArrayExpression: require("./components/ArrayExpression")
+}; 
 
 // Use a Piping System
 var currentState = syntaxTree;
@@ -47,7 +48,15 @@ var currentState = syntaxTree;
 // Standard Piping Function
 function parse(item) {
 
-    return components[item.type].write(item, {
+    if (item == null) throw new Error(`Item is null`);
+
+    if (item.type == undefined) throw new Error(`${item} does not have type.`);
+
+    var component = components[item.type];
+
+    if (component == null) throw new Error(`Type ${item.type}, does not exist.`);
+
+    return component.write(item, {
         parse
     });
 
