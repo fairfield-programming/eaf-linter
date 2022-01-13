@@ -1,6 +1,8 @@
 function write(item, main) {
 
-    return `if (${main.parse(item.test)}) ${main.parse(item.consequent)}`;
+    if (item.alternate == undefined) return `if (${main.parse(item.test)}) ${main.parse(item.consequent)}`;
+
+    return `if (${main.parse(item.test)}) ${main.parse(item.consequent)} else ${main.parse(item.alternate)}`;
 
 }
 

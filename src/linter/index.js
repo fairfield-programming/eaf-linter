@@ -8,7 +8,17 @@ var syntaxTree = parser.parse(
 // good, use the let.
 let count = 1;
 if (true) {
+  
   count += 1;
+  
+} else if (false) {
+
+  count += 2;
+  
+} else {
+
+  count += 3;
+
 }
 
 `).program.body;
