@@ -4,10 +4,11 @@ const commentSeparator = require('./pipe/commentSeparator');
 
 var syntaxTree = parser.parse(
 `
-// this is a test
-function testing() {
 
-    var username = "William McGonagle"
+//   feature request: add more functions in
+function testing_function (a, b) {
+
+        var username = a + " " + b
 
 }
 

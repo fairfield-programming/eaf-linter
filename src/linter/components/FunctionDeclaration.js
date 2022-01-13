@@ -1,6 +1,18 @@
 function write(item, main) {
 
-    return "function " + main.parse(item.id) + " " + main.parse(item.body);
+    var parameters = [];
+
+    item.params.forEach(element => {
+        
+        parameters.push(
+            main.parse(
+                element
+            )
+        );
+
+    });
+
+    return `function ${main.parse(item.id)} (${parameters.join(', ')}) ${main.parse(item.body)}`;
 
 }
 

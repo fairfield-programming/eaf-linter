@@ -1,6 +1,8 @@
+const commentFormatter = require('../utility/commentFormatter');
+
 function write(item, main) {
 
-    return "// " + item.value;
+    return "// " + commentFormatter.reformatLineComment(item.value);
 
 }
 

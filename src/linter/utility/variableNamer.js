@@ -48,6 +48,9 @@ function toStandardIdentifierFormat(input) {
     var output = [ '' ];
     var n = 0;
 
+    // For Distant Use Cases
+    var uppercaseWord = true;
+
     // Loop through Each Letter
     for (var i = 0; i < input.length; i++) {
 
@@ -68,12 +71,14 @@ function toStandardIdentifierFormat(input) {
         // Check if Its Now a Capital Letter
         if (currentLetter === currentLetter.toUpperCase() && currentLetter !== currentLetter.toLowerCase()) {
 
-            if (output[n] == '') {
+            if (output[n] == '' || uppercaseWord) {
                 
                 output[n] += currentLetter.toLowerCase();
                 continue;
 
             }
+
+            uppercaseWord = true;
 
             output.push(currentLetter.toLowerCase());
             n++;
@@ -82,7 +87,8 @@ function toStandardIdentifierFormat(input) {
         }
 
         // If Letter Still Here, Add It
-        output[n] += currentLetter;
+        output[n] += currentLetter.toLowerCase();
+        uppercaseWord = false;
 
     }
 
