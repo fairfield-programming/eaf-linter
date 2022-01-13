@@ -5,6 +5,12 @@ const commentSeparator = require('./pipe/commentSeparator');
 var syntaxTree = parser.parse(
 `
 
+// good, use the let.
+let count = 1;
+if (true) {
+  count += 1;
+}
+
 `).program.body;
 
 var components = {
@@ -23,7 +29,9 @@ var components = {
     ArrowFunctionExpression: require("./components/ArrowFunctionExpression"),
     FunctionExpression: require("./components/FunctionExpression"),
     AssignmentExpression: require("./components/AssignmentExpression"),
-    ArrayExpression: require("./components/ArrayExpression")
+    ArrayExpression: require("./components/ArrayExpression"),
+    IfStatement: require("./components/IfStatement"),
+    BooleanLiteral: require("./components/BooleanLiteral")
 }; 
 
 // Use a Piping System
