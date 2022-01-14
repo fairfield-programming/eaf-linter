@@ -1,13 +1,15 @@
+const { iterate } = require("../utility/pipeHelper");
+
 function separateComments(input) {
 
     var output = [];
 
-    input.forEach(function (item) {
-
-        if (item.leadingComments !== undefined)
-            output.push(...item.leadingComments);
+    input.forEach(element => {
         
-        output.push(item);
+        if (element.leadingComments !== undefined)
+        output.push(...element.leadingComments);
+    
+        output.push(element);
 
     });
 

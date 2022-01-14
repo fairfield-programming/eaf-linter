@@ -20,8 +20,8 @@ function verticalPadding(text, amount) {
 function indent(text, amount) {
 
     var newline = "\n" + new Array(amount + 1).join("\t");
-
-    return text.replace(/\n/g, newline);
+    
+    return text.replace(/\n/g, newline).replace(/\t([^\t]*)$/, '$1');
 
 }
 

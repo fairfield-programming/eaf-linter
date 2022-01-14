@@ -1,6 +1,8 @@
+const { semicolon } = require('../utility/formattingDeclarations');
+
 function write(item, main) {
 
-    return `${main.parse(item.expression)}`;
+    return `${main.parse(item.expression)}${semicolon()}`;
 
 }
 
