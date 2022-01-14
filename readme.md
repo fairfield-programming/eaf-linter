@@ -13,7 +13,7 @@ _Knowing if you need to work on your code is important-_ that's why we grade you
 
 ### [Lightweight, Feature-Rich Testing Suite](https://github.com/fairfield-programming/eaf-linter/tree/master/src/tester)
 
-Our testing system gets as close-to-the-metal as possible. What this means for you is that the tests run fast, and since they run on Javascript's V8 engine, everything you expect to happen, will happen. Nothing can be simplier than writing tests for the EaF linter, its as easy as writing things in plain English. Don't believe me, look at the code below!
+Our testing system gets as close-to-the-metal as possible. What this means for you is that the tests run fast, and since they run on JavaScript's V8 engine, everything you expect to happen, will happen. Nothing can be simplier than writing tests for the EaF linter, its as easy as writing things in plain English. Don't believe me, look at the code below!
 
 ```javascript
 describe(`A simple test!`, () => {
@@ -28,6 +28,8 @@ describe(`A simple test!`, () => {
 Our code-linter is built using an Abstract Syntax Tree approach. This allows for the code to be quickly and easily restructured into a more performant and readible program. Our linter also supports custom piping. This means that users can define scripts tell how they would like the resulting code to look. If you don't want to use custom scripts, we already have tons of prebuilt scripts just for you.
 
 ### [Customizable Beautifier](https://github.com/fairfield-programming/eaf-linter/tree/master/src/prettier)
+
+We have one of the most customizable code beautifiers in the JavaScript world. You can choose how you want spacing to work, if you want semicolins, how comments should be structured, how variable naming should work, etc. And, since our beautifier works alongside our code linter, you can also choose things like: should all methods be changed to arrow functions? should only `let` and `const` be allowed as variable declarors? should object properties be arranged by alphabetical order?
 
 ### [Performance Analysis Tool](https://github.com/fairfield-programming/eaf-linter/tree/master/src/performer)
 
