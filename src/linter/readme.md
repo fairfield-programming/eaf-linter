@@ -1,6 +1,6 @@
 # Linter
 
-Our clean code linter is built with only a single dependency, the babel parser, which we are quickly trying to replace with our own solution. It allows for a pipelined approach, so you can control what rules you would like to inforce in your code formatting. And, we also built all of our systems to be naughty and nice. This means that if you don't want your code to be forcibly changed, it will just leave comments letting you know about possible changes. But, if you want it to change your code automatically, just change the setting to naughty and it will fully lint your code.
+Our clean code linter is built with only a single dependency, the Babel parser, which we are quickly trying to replace with our own solution. It allows for a pipelined approach, so you can control what rules you would like to inforce in your code formatting. And, we also built all of our systems to be naughty and nice. This means that if you don't want your code to be forcibly changed, it will just leave comments letting you know about possible changes. But, if you want it to change your code automatically, just change the setting to naughty and it will fully lint your code.
 
 ## How it Works
 
