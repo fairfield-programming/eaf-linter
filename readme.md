@@ -25,6 +25,8 @@ describe(`A simple test!`, () => {
 
 ### [Code Linter and Smell Detector](https://github.com/fairfield-programming/eaf-linter/tree/master/src/linter)
 
+Our code-linter is built using an Abstract Syntax Tree approach. This allows for the code to be quickly and easily restructured into a more performant and readible program. Our linter also supports custom piping. This means that users can define scripts tell how they would like the resulting code to look. If you don't want to use custom scripts, we already have tons of prebuilt scripts just for you.
+
 ### [Customizable Beautifier](https://github.com/fairfield-programming/eaf-linter/tree/master/src/prettier)
 
 ### [Performance Analysis Tool](https://github.com/fairfield-programming/eaf-linter/tree/master/src/performer)
