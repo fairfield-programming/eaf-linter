@@ -37,8 +37,6 @@ function pipe(input) {
 
 function run() {
 
-    var fileData = lintString(fs.readFileSync(__dirname + '/test.js', 'ascii'));
-    fs.writeFileSync(__dirname + '/test.js', fileData);
 
 }
 
