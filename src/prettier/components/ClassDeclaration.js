@@ -1,6 +1,6 @@
 function write(item, main) {
 
-    return "//";
+    return `class ${main.parse(item.id)} ${main.parse(item.body)}`;
 
 }
 

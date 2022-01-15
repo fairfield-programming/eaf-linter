@@ -1,12 +1,13 @@
 const linter = require("../linter/index");
+const path = require('path');
 const fs = require('fs');
 const Folder = require("../general/folder");
 
 var components = fs.readdirSync(__dirname + "/components/").map(function (element, index) {
 
     return { 
-        key: element.replace(".js", ""), 
-        value: require(__dirname + "/components/" + element) 
+        key: path.basename(element, path.extname(element)),
+        value: require(path.join(__dirname, "/components/", element)) 
     };
 
 }).reduce(function(map, obj) {
@@ -15,8 +16,6 @@ var components = fs.readdirSync(__dirname + "/components/").map(function (elemen
     return map;
 
 }, {})
-
-console.log(components)
 
 function parse(item) {
 
@@ -68,12 +67,14 @@ function run() {
 
     folder.forEachFile(function fileMethod(file, state) {
 
-        if (file.filePath.includes(".js")) {
+        if (path.extname(file.filePath) == ".js") {
 
             console.log(file.filePath);
 
             var fileData = fs.readFileSync(file.filePath, 'ascii');
             var cleanedFile = cleanFile(fileData);
+
+            console.log(cleanedFile);
         
         }
 
