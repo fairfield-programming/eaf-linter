@@ -75,8 +75,15 @@ function cleanFile(input) {
 
 }
 
+function run(settings) {
+
+
+
+}
+
 module.exports = {
     cleanFile,
     stringifyAST,
     parse,
+    run,
 };

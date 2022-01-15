@@ -1,4 +1,4 @@
-const { iterate } = require("../utility/pipeHelper");
+const { iterate } = require("../../utility/pipeHelper");
 
 function separateComments(input) {
 

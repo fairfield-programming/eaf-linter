@@ -1,4 +1,4 @@
-const variableNamer = require('../utility/variableNamer');
+const variableNamer = require('../../utility/variableNamer');
 
 function write(item, main) {
 

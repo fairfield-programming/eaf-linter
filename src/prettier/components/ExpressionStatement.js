@@ -1,4 +1,4 @@
-const { semicolon } = require('../utility/formattingDeclarations');
+const { semicolon } = require('../../utility/formattingDeclarations');
 
 function write(item, main) {
 

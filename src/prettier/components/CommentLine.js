@@ -1,4 +1,4 @@
-const commentFormatter = require('../utility/commentFormatter');
+const commentFormatter = require('../../utility/commentFormatter');
 
 function write(item, main) {
 
