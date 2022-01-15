@@ -1,6 +1,6 @@
 function write(item, main) {
 
-    return "//";
+    return `throw ${main.parse(item.argument)}`;
 
 }
 

@@ -1,6 +1,7 @@
 function write(item, main) {
 
-    return "//";
+    if (item.prefix) return `${item.operator} ${main.parse(item.argument)}`;
+    return `${main.parse(item.argument)} ${item.operator}`;
 
 }
 

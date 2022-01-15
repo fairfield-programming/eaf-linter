@@ -1,6 +1,6 @@
 function write(item, main) {
 
-    return "null";
+    return item.extra.raw;
 
 }
 
