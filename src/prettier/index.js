@@ -74,3 +74,9 @@ function cleanFile(input) {
     return stringifyAST(finalSyntaxTree);
 
 }
+
+module.exports = {
+    cleanFile,
+    stringifyAST,
+    parse,
+};
