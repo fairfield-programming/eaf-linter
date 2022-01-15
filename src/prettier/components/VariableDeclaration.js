@@ -1,6 +1,18 @@
 function write(item, main) {
 
-    return `${item.kind} ${main.parse(item.declarations[0])}`;
+    var declarations = [];
+
+    item.declarations.forEach(element => {
+        
+        declarations.push(
+            main.parse(
+                element
+            )
+        );
+
+    });
+
+    return `${item.kind} ${declarations.join()}`;
 
 }
 

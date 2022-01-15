@@ -1,6 +1,6 @@
 function write(item, main) {
 
-    return "//";
+    return `for (${main.parse(item.left)} in ${main.parse(item.right)}) ${main.parse(item.body)}`;
 
 }
 

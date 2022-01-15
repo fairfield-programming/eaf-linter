@@ -1,6 +1,6 @@
 function write(item, main) {
 
-    return `/*${item.value}*/`;
+    return `await ${main.parse(item.argument)}`;
 
 }
 
