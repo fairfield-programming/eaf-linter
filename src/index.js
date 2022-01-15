@@ -1,15 +1,13 @@
 #! /usr/bin/env node
 
-// const reporter = require('./reporter');
-// const tester = require('./tester');
+const reporter = require('./reporter');
+const tester = require('./tester');
 // const performer = require('./performer');
 const prettier = require('./prettier');
 
-var userSettings = {};
+reporter.storeMetricsFile();
 
-prettier.run(userSettings);
-
-// reporter.storeMetricsFile();
+prettier.run();
 
 // if (global.eafSettings["run-tests"] != undefined) {
 

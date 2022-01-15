@@ -75,8 +75,8 @@ function printDotTestResult(text, result) {
     // Set Title to Be Bold
     var resultTitle = "\033[1m";
 
-    if (result == true) resultTitle += "\033[1;32;49m•";
-    if (result == false) resultTitle += "\033[1;31;49m•";
+    if (result == true) resultTitle += "\033" + `[1;32;49m\•`;
+    if (result == false) resultTitle += "\033" + `[1;31;49m\•`;
 
     // Unbold Title
     resultTitle += "\033[22m";

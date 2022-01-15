@@ -1,35 +1,22 @@
 const linter = require("../linter/index");
+const fs = require('fs');
+const Folder = require("../general/folder");
 
-var components = {
-    VariableDeclarator: require("./components/VariableDeclarator"),
-    VariableDeclaration: require("./components/VariableDeclaration"),
-    BinaryExpression: require("./components/BinaryExpression"),
-    Identifier: require("./components/Identifier"),
-    NumericLiteral: require("./components/NumericLiteral"),
-    CommentLine: require("./components/CommentLine"),
-    FunctionDeclaration: require("./components/FunctionDeclaration"),
-    BlockStatement: require("./components/BlockStatement"),
-    StringLiteral: require("./components/StringLiteral"),
-    ExpressionStatement: require("./components/ExpressionStatement"),
-    CallExpression: require("./components/CallExpression"),
-    MemberExpression: require("./components/MemberExpression"),
-    ArrowFunctionExpression: require("./components/ArrowFunctionExpression"),
-    FunctionExpression: require("./components/FunctionExpression"),
-    AssignmentExpression: require("./components/AssignmentExpression"),
-    ArrayExpression: require("./components/ArrayExpression"),
-    IfStatement: require("./components/IfStatement"),
-    BooleanLiteral: require("./components/BooleanLiteral"),
-    NewExpression: require("./components/NewExpression"),
-    ObjectExpression: require("./components/ObjectExpression"),
-    ObjectProperty: require("./components/ObjectProperty"),
-    ReturnStatement: require("./components/ReturnStatement"),
-    ObjectMethod: require("./components/ObjectMethod"),
-    TemplateLiteral: require("./components/TemplateLiteral"),
-    TemplateElement: require("./components/TemplateElement"),
-    SpreadElement: require("./components/SpreadElement"),
-    ObjectPattern: require("./components/ObjectPattern"),
-    ConditionalExpression: require("./components/ConditionalExpression")
-}; 
+var components = fs.readdirSync(__dirname + "/components/").map(function (element, index) {
+
+    return { 
+        key: element.replace(".js", ""), 
+        value: require(__dirname + "/components/" + element) 
+    };
+
+}).reduce(function(map, obj) {
+
+    map[obj.key] = obj.value;
+    return map;
+
+}, {})
+
+console.log(components)
 
 function parse(item) {
 
@@ -47,7 +34,7 @@ function parse(item) {
 
 }
 
-function stringifyAST(ast) {
+function stringifyAST(finalSyntaxTree) {
 
     // Create Output Data
     var output = [];
@@ -68,16 +55,29 @@ function cleanFile(input) {
 
     // Read AST and Pipe It 
     var syntaxTree = linter.fileToAST(input);
-    var finalSyntaxTree = pipe(syntaxTree);
+    var finalSyntaxTree = linter.pipe(syntaxTree);
 
     // Return the Stringified AST
     return stringifyAST(finalSyntaxTree);
 
 }
 
-function run(settings) {
+function run() {
 
+    var folder = new Folder(process.cwd());
 
+    folder.forEachFile(function fileMethod(file, state) {
+
+        if (file.filePath.includes(".js")) {
+
+            console.log(file.filePath);
+
+            var fileData = fs.readFileSync(file.filePath, 'ascii');
+            var cleanedFile = cleanFile(fileData);
+        
+        }
+
+    }, { });
 
 }
 

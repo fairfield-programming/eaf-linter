@@ -1,5 +1,4 @@
 const parser = require("@babel/parser");
-const fs = require('fs');
 
 const commentSeparator = require('./pipe/commentSeparator');
 const staleDetector = require('./pipe/staleDetector');
@@ -11,6 +10,8 @@ function fileToAST(input) {
 
     // Babel Parse It
     var syntaxTree = parser.parse(input).program.body;
+
+    return syntaxTree;
 
 }
 
