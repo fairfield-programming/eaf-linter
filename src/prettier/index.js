@@ -74,9 +74,7 @@ function run() {
             var fileData = fs.readFileSync(file.filePath, 'ascii');
             var cleanedFile = cleanFile(fileData);
 
-            
-
-            // console.log(cleanedFile);
+            console.log(cleanedFile);
         
         }
 

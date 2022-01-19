@@ -9,6 +9,11 @@
     "minor": "npm version minor && npm publish && git push --follow-tags",
     "major": "npm version major && npm publish && git push --follow-tags"
   },
+  "files": [
+    "src/*.js",
+    "src/**/*.js",
+    "src/**/**/*.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fairfield-programming/eaf-linter.git"
