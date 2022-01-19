@@ -33,7 +33,13 @@ We have one of the most customizable code beautifiers in the JavaScript world. Y
 
 ### [Performance Analysis Tool](https://github.com/fairfield-programming/eaf-linter/tree/master/src/performer)
 
+_in progress_
+
 Performance anaylsis is very important, especially if you are managing a ton of data that has rapid changes to it. That is why EaF offers some of the most robust and detailed tools for measuring your codes execution time. We will run it in thousands of test cases, and you can setup different scenarios to make sure that the code you put out, stays on top.
+
+### [Documentation Generator]()
+
+_in progress_
 
 ## For Github Actions
 
