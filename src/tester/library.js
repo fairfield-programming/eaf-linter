@@ -57,6 +57,21 @@ class Expectation {
         return this;
 
     }
+    
+    toBeGreaterThanOrEqualTo(input) {
+
+        if (typeof input != 'number' || typeof (this.data) != 'number') {
+
+            global.EAF_CURRENT_TEST_PASSING = false;
+            return this;
+
+        }
+
+        global.EAF_CURRENT_TEST_PASSING = global.EAF_CURRENT_TEST_PASSING && (this.data >= input);
+
+        return this;
+
+    }
 
     toExist() {
 
